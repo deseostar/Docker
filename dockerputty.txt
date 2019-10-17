@@ -1,0 +1,557 @@
+login as: docker
+docker@192.168.14.129's password:
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.0.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+168 packages can be updated.
+93 updates are security updates.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2023.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+docker@ubuntu:~$ sudo apt-get install vim
+[sudo] password for docker:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  vim-runtime
+Suggested packages:
+  ctags vim-doc vim-scripts
+The following NEW packages will be installed:
+  vim vim-runtime
+0 upgraded, 2 newly installed, 0 to remove and 163 not upgraded.
+Need to get 6,587 kB of archives.
+After this operation, 32.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim-runtime                             all 2:8.0.1453-1ubuntu1.1 [5,435 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim amd64 2:                            8.0.1453-1ubuntu1.1 [1,152 kB]
+Fetched 6,587 kB in 3s (2,494 kB/s)
+Selecting previously unselected package vim-runtime.
+(Reading database ... 129256 files and directories currently installed.)
+Preparing to unpack .../vim-runtime_2%3a8.0.1453-1ubuntu1.1_all.deb ...
+Adding 'diversion of /usr/share/vim/vim80/doc/help.txt to /usr/share/vim/vim80/d                            oc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim80/doc/tags to /usr/share/vim/vim80/doc/t                            ags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:8.0.1453-1ubuntu1.1) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../vim_2%3a8.0.1453-1ubuntu1.1_amd64.deb ...
+Unpacking vim (2:8.0.1453-1ubuntu1.1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up vim-runtime (2:8.0.1453-1ubuntu1.1) ...
+Setting up vim (2:8.0.1453-1ubuntu1.1) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in a                            uto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdi                            ff) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in                             auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview)                             in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in aut                            o mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in                             auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in aut                            o mode
+docker@ubuntu:~$ curl -fsSL https://get.docker.com/ | sudo sh
+
+Command 'curl' not found, but can be installed with:
+
+sudo apt install curl
+
+docker@ubuntu:~$ sudo apt install curl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libcurl4
+The following NEW packages will be installed:
+  curl libcurl4
+0 upgraded, 2 newly installed, 0 to remove and 163 not upgraded.
+Need to get 373 kB of archives.
+After this operation, 1,038 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl4 amd                            64 7.58.0-2ubuntu3.8 [214 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu bionic-updates/main amd64 curl amd64 7                            .58.0-2ubuntu3.8 [159 kB]
+Fetched 373 kB in 3s (116 kB/s)
+Selecting previously unselected package libcurl4:amd64.
+(Reading database ... 131023 files and directories currently installed.)
+Preparing to unpack .../libcurl4_7.58.0-2ubuntu3.8_amd64.deb ...
+Unpacking libcurl4:amd64 (7.58.0-2ubuntu3.8) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../curl_7.58.0-2ubuntu3.8_amd64.deb ...
+Unpacking curl (7.58.0-2ubuntu3.8) ...
+Setting up libcurl4:amd64 (7.58.0-2ubuntu3.8) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up curl (7.58.0-2ubuntu3.8) ...
+docker@ubuntu:~$ curl -fsSL https://get.docker.com/ | sudo sh
+# Executing docker install script, commit: f45d7c11389849ff46a6b4d94e0dd1ffebca3                            2c1
++ sh -c apt-get update -qq >/dev/null
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-http                            s ca-certificates curl >/dev/null
++ sh -c curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" | apt-key add                             -qq - >/dev/null
+Warning: apt-key output should not be parsed (stdout is not a terminal)
++ sh -c echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic s                            table" > /etc/apt/sources.list.d/docker.list
++ sh -c apt-get update -qq >/dev/null
++ [ -n  ]
++ sh -c apt-get install -y -qq --no-install-recommends docker-ce >/dev/null
++ sh -c docker version
+Client: Docker Engine - Community
+ Version:           19.03.3
+ API version:       1.40
+ Go version:        go1.12.10
+ Git commit:        a872fc2f86
+ Built:             Tue Oct  8 00:59:59 2019
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          19.03.3
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.10
+  Git commit:       a872fc2f86
+  Built:            Tue Oct  8 00:58:31 2019
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.2.10
+  GitCommit:        b34a5c8af56e510852c35414db4c1f4fa6172339
+ runc:
+  Version:          1.0.0-rc8+dev
+  GitCommit:        3e425f80a8c931f88e6d94a8c831b9d5aa481657
+ docker-init:
+  Version:          0.18.0
+  GitCommit:        fec3683
+If you would like to use Docker as a non-root user, you should now consider
+adding your user to the "docker" group with something like:
+
+  sudo usermod -aG docker your-user
+
+Remember that you will have to log out and back in for this to take effect!
+
+WARNING: Adding a user to the "docker" group will grant the ability to run
+         containers which can be used to obtain root privileges on the
+         docker host.
+         Refer to https://docs.docker.com/engine/security/security/#docker-daemo                            n-attack-surface
+         for more information.
+docker@ubuntu:~$ sudo docker info
+Client:
+ Debug Mode: false
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 19.03.3
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk s                            yslog
+ Swarm: inactive
+ Runtimes: runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: b34a5c8af56e510852c35414db4c1f4fa6172339
+ runc version: 3e425f80a8c931f88e6d94a8c831b9d5aa481657
+ init version: fec3683
+ Security Options:
+  apparmor
+  seccomp
+   Profile: default
+ Kernel Version: 5.0.0-23-generic
+ Operating System: Ubuntu 18.04.3 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 1.92GiB
+ Name: ubuntu
+ ID: 5QDK:424X:2PDP:JYT5:DE24:UPGJ:3RXU:WF6K:VG4L:ZZ72:4S2C:2ZWM
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+WARNING: No swap limit support
+docker@ubuntu:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED                                         STATUS              PORTS               NAMES
+docker@ubuntu:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED                                         SIZE
+docker@ubuntu:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete
+Digest: sha256:c3b4ada4687bbaa170745b3e4dd8ac3f194ca95b2d0518b417fb47e5879d9b5f
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+docker@ubuntu:~$  sudo docker ps ?a
+"docker ps" accepts no arguments.
+See 'docker ps --help'.
+
+Usage:  docker ps [OPTIONS]
+
+List containers
+docker@ubuntu:~$ sudo docker ps ?a
+"docker ps" accepts no arguments.
+See 'docker ps --help'.
+
+Usage:  docker ps [OPTIONS]
+
+List containers
+docker@ubuntu:~$ sudo docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+docker@ubuntu:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED                                         SIZE
+hello-world         latest              fce289e99eb9        9 months ago                                    1.84kB
+docker@ubuntu:~$ sudo docker ps ?a
+"docker ps" accepts no arguments.
+See 'docker ps --help'.
+
+Usage:  docker ps [OPTIONS]
+
+List containers
+docker@ubuntu:~$ sudo docker ps ?-a
+"docker ps" accepts no arguments.
+See 'docker ps --help'.
+
+Usage:  docker ps [OPTIONS]
+
+List containers
+docker@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED                                         STATUS                      PORTS               NAMES
+59709289bc9c        hello-world         "/hello"            48 seconds ago                                  Exited (0) 47 seconds ago                       suspicious_satoshi
+10152295772c        hello-world         "/hello"            2 minutes ago                                   Exited (0) 2 minutes ago                        awesome_sinoussi
+docker@ubuntu:~$ sudo docker pull ubuntu:16.04
+16.04: Pulling from library/ubuntu
+16c48d79e9cc: Pull complete
+3c654ad3ed7d: Pull complete
+6276f4f9c29d: Pull complete
+a4bd43ad48ce: Pull complete
+Digest: sha256:6239ca16d54d8edd38788aacde7c6426e5999ffbbd7e97ac3cf04d474341d079
+Status: Downloaded newer image for ubuntu:16.04
+docker.io/library/ubuntu:16.04
+docker@ubuntu:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED                                         SIZE
+ubuntu              16.04               657d80a6401d        4 weeks ago                                     121MB
+hello-world         latest              fce289e99eb9        9 months ago                                    1.84kB
+docker@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED                                         STATUS                     PORTS               NAMES
+59709289bc9c        hello-world         "/hello"            3 minutes ago                                   Exited (0) 3 minutes ago                       suspicious_satoshi
+10152295772c        hello-world         "/hello"            5 minutes ago                                   Exited (0) 5 minutes ago                       awesome_sinoussi
+docker@ubuntu:~$ sudo docker run ubuntu:16.04
+docker@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED                                         STATUS                     PORTS               NAMES
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"         10 seconds ago                                  Exited (0) 9 seconds ago                       pedantic_easley
+59709289bc9c        hello-world         "/hello"            5 minutes ago                                   Exited (0) 5 minutes ago                       suspicious_satoshi
+10152295772c        hello-world         "/hello"            6 minutes ago                                   Exited (0) 6 minutes ago                       awesome_sinoussi
+docker@ubuntu:~$ sudo docker rmi hello-world
+Error response from daemon: conflict: unable to remove repository reference "hel                            lo-world" (must force) - container 59709289bc9c is using its referenced image fc                            e289e99eb9
+docker@ubuntu:~$ sudo docker rm^Cello-world
+docker@ubuntu:~$ sudo docker rm 10152295772c
+10152295772c
+docker@ubuntu:~$ sudo docker rmi hello-world
+Error response from daemon: conflict: unable to remove repository reference "hel                            lo-world" (must force) - container 59709289bc9c is using its referenced image fc                            e289e99eb9
+docker@ubuntu:~$ sudo docker rm 59709289bc9c
+59709289bc9c
+docker@ubuntu:~$ sudo docker rmi hello-world
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:c3b4ada4687bbaa170745b3e4dd8ac3f194ca95b2d0518b417f                            b47e5879d9b5f
+Deleted: sha256:fce289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e
+Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
+docker@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED                                         STATUS                     PORTS               NAMES
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"         3 minutes ago                                   Exited (0) 3 minutes ago                       pedantic_easley
+docker@ubuntu:~$ sudo docker run -d -p 80:80 httpd
+Unable to find image 'httpd:latest' locally
+latest: Pulling from library/httpd
+b8f262c62ec6: Pull complete
+2c31b9311798: Pull complete
+7422a3cdf4e3: Pull complete
+1919d4fbf9e1: Pull complete
+60812fa1ab4c: Pull complete
+Digest: sha256:39d7d9a3ab93c0ad68ee7ea237722ed1b0016ff6974d80581022a53ec1e58797
+Status: Downloaded newer image for httpd:latest
+270caabb44914c9196f66c4f1d0679db61781b78d5de9badc5e387d882493791
+docker@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND              CREATED                                         STATUS                     PORTS                NAMES
+270caabb4491        httpd               "httpd-foreground"   22 seconds ago                                  Up 21 seconds              0.0.0.0:80->80/tcp   beautiful_goldwasser
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"          5 minutes ago                                   Exited (0) 5 minutes ago                        pedantic_easley
+docker@ubuntu:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group defaul                            t qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP gro                            up default qlen 1000
+    link/ether 00:0c:29:6c:6d:76 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.14.129/24 brd 192.168.14.255 scope global dynamic noprefixroute                             ens33
+       valid_lft 1164sec preferred_lft 1164sec
+    inet6 fe80::1d6c:ab45:21fd:ed84/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+3: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP gr                            oup default
+    link/ether 02:42:5a:46:7b:1d brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:5aff:fe46:7b1d/64 scope link
+       valid_lft forever preferred_lft forever
+11: veth1e7e3c7@if10: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue m                            aster docker0 state UP group default
+    link/ether 52:0f:01:50:38:95 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet6 fe80::500f:1ff:fe50:3895/64 scope link
+       valid_lft forever preferred_lft forever
+docker@ubuntu:~$ sudo docker ps -a
+[sudo] password for docker:
+CONTAINER ID        IMAGE               COMMAND              CREATED                                         STATUS                      PORTS                NAMES
+270caabb4491        httpd               "httpd-foreground"   17 minutes ago                                  Up 17 minutes               0.0.0.0:80->80/tcp   beautiful_goldwasser
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"          22 minutes ago                                  Exited (0) 22 minutes ago                        pedantic_easley
+docker@ubuntu:~$ sudo docker stop ^C
+docker@ubuntu:~$ sudo docker stop 270caabb4491
+270caabb4491
+docker@ubuntu:~$ sudo docker start 270caabb4491
+270caabb4491
+docker@ubuntu:~$ sudo docker stop 270caabb4491
+270caabb4491
+docker@ubuntu:~$ sudo docker run --name httpd -d -p 80:80 httpd
+5706fefd2763e50512a6d316320cd9ae1e8f229df2e0bc6e752f2004234d086b
+docker@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS                               PORTS                NAMES
+5706fefd2763        httpd               "httpd-foreground"   6 seconds ago       Up 6 seconds                         0.0.0.0:80->80/tcp   httpd
+270caabb4491        httpd               "httpd-foreground"   23 minutes ago      Exited (137) 4 minu        tes ago                        beautiful_goldwasser
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"          28 minutes ago      Exited (0) 28 minut        es ago                         pedantic_easley
+docker@ubuntu:~$ sudo docker stop httpd
+httpd
+docker@ubuntu:~$ mkdir test
+docker@ubuntu:~$ sudo docker run --name httpd2 -v ~/test:/test -d -p 80:80 httpd
+f24f6bc52fee047cb9d9642c586f0e7154b7193c39b36fb612c14f69f8297d70
+docker@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS                       PORTS                NAMES
+f24f6bc52fee        httpd               "httpd-foreground"   42 seconds ago      Up 41 seconds                0.0.0.0:80->80/tcp   httpd2
+5706fefd2763        httpd               "httpd-foreground"   3 minutes ago       Exited (0) 2 minutes ago                          httpd
+270caabb4491        httpd               "httpd-foreground"   26 minutes ago      Exited (137) 7 minutes ago                        beautiful_goldwasser
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"          32 minutes ago      Exited (0) 32 minutes ago                         pedantic_easley
+docker@ubuntu:~$ sudo docker exec -it httpd2 bash
+root@f24f6bc52fee:/usr/local/apache2# ls -al
+total 56
+drwxr-xr-x 1 www-data www-data 4096 Sep 12 14:01 .
+drwxr-xr-x 1 root     root     4096 Sep 12 13:59 ..
+drwxr-xr-x 2 root     root     4096 Sep 12 14:01 bin
+drwxr-xr-x 2 root     root     4096 Sep 12 14:01 build
+drwxr-xr-x 2 root     root     4096 Sep 12 14:01 cgi-bin
+drwxr-xr-x 4 root     root     4096 Sep 12 14:01 conf
+drwxr-xr-x 3 root     root     4096 Sep 12 14:01 error
+drwxr-xr-x 2 root     root     4096 Sep 12 14:01 htdocs
+drwxr-xr-x 3 root     root     4096 Sep 12 14:01 icons
+drwxr-xr-x 2 root     root     4096 Sep 12 14:01 include
+drwxr-xr-x 1 root     root     4096 Oct 17 02:45 logs
+drwxr-xr-x 2 root     root     4096 Sep 12 14:01 modules
+root@f24f6bc52fee:/usr/local/apache2# mkdir abc
+root@f24f6bc52fee:/usr/local/apache2# ls
+abc  bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+root@f24f6bc52fee:/usr/local/apache2# /test# cd /test
+bash: /test#: No such file or directory
+root@f24f6bc52fee:/usr/local/apache2# dir
+abc  bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+root@f24f6bc52fee:/usr/local/apache2# ls
+abc  bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+root@f24f6bc52fee:/usr/local/apache2# ll
+bash: ll: command not found
+root@f24f6bc52fee:/usr/local/apache2# cd..
+bash: cd..: command not found
+root@f24f6bc52fee:/usr/local/apache2# cd.
+bash: cd.: command not found
+root@f24f6bc52fee:/usr/local/apache2# helf
+bash: helf: command not found
+root@f24f6bc52fee:/usr/local/apache2# /test# cd/test
+bash: /test#: No such file or directory
+root@f24f6bc52fee:/usr/local/apache2# exit
+exit
+docker@ubuntu:~$ sudo docker exec -it httpd2 bash
+root@f24f6bc52fee:/usr/local/apache2# cd /test/
+root@f24f6bc52fee:/test# test# ls
+bash: test#: command not found
+root@f24f6bc52fee:/test# ls
+root@f24f6bc52fee:/test# rm -rf abc
+root@f24f6bc52fee:/test# exit
+exit
+docker@ubuntu:~$ ls
+Desktop  Documents  Downloads  examples.desktop  Music  Pictures  Public  Templates  test  Videos
+docker@ubuntu:~$ sudo docker stop httpd2
+httpd2
+docker@ubuntu:~$ sudo docker exec -it httpd2 bash
+Error response from daemon: Container f24f6bc52fee047cb9d9642c586f0e7154b7193c39b36fb612c14f69f8297d70 is not running
+docker@ubuntu:~$ sudo docker start httpd2
+httpd2
+docker@ubuntu:~$ sudo docker exec -it httpd2 bash
+root@f24f6bc52fee:/usr/local/apache2# cd /test/
+root@f24f6bc52fee:/test# sudo stop httpd2
+bash: sudo: command not found
+root@f24f6bc52fee:/test# sudo docker stop httpd2
+bash: sudo: command not found
+root@f24f6bc52fee:/test# sudo docker ps -a
+bash: sudo: command not found
+root@f24f6bc52fee:/test# exit
+exit
+docker@ubuntu:~$ cd /test/
+-bash: cd: /test/: No such file or directory
+docker@ubuntu:~$ cd test
+docker@ubuntu:~/test$ sudo docker stop httpd2
+httpd2
+docker@ubuntu:~/test$ sudo docker ps -1
+unknown shorthand flag: '1' in -1
+See 'docker ps --help'.
+docker@ubuntu:~/test$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS                        PORTS               NAMES
+f24f6bc52fee        httpd               "httpd-foreground"   11 minutes ago      Exited (0) 14 seconds ago                         httpd2
+5706fefd2763        httpd               "httpd-foreground"   14 minutes ago      Exited (0) 12 minutes ago                         httpd
+270caabb4491        httpd               "httpd-foreground"   37 minutes ago      Exited (137) 18 minutes ago                       beautiful_goldwasser
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"          42 minutes ago      Exited (0) 42 minutes ago                         pedantic_easley
+docker@ubuntu:~/test$ sudo docker run -d --name mysql -v mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=wordpress -e MYSQL_DATABASE=wordpress -e MYSQL_USER=wordpress -e MYSQL_PASSWORD=wordpress mysql:5.7
+Unable to find image 'mysql:5.7' locally
+5.7: Pulling from library/mysql
+8f91359f1fff: Pull complete
+6bbb1c853362: Pull complete
+e6e554c0af6f: Pull complete
+f391c1a77330: Pull complete
+414a8a88eabc: Pull complete
+fee78658f4dd: Pull complete
+9568f6bff01b: Pull complete
+b348bc63b89d: Pull complete
+864b3bbd0929: Pull complete
+db5f27a8464a: Pull complete
+25e330fc30b8: Pull complete
+Digest: sha256:759e6019aefb5d5a4e24920b223d85ed1ef9e3e66dd457ff469370dd1e050180
+Status: Downloaded newer image for mysql:5.7
+ba3d20fd19c084aa95b34f6588b6704721c1d6a4fb8ec4d31b777cdb30cff797
+docker@ubuntu:~/test$ sudo docker run -d --name wordpress -v wordpress:/var/www/html --link mysql:mysql -e WORDPRESS_DB_HOST=mysql:3306 -e WORDPRESS_DB_PASSWORD=wordpress -p 80:80 wordpress:latest
+Unable to find image 'wordpress:latest' locally
+latest: Pulling from library/wordpress
+b8f262c62ec6: Already exists
+a98660e7def6: Pull complete
+4d75689ceb37: Pull complete
+639eb0368afa: Pull complete
+99e337926e9c: Pull complete
+431d44b3ce98: Pull complete
+beb665ea0e0e: Pull complete
+1914f5ed0362: Pull complete
+3bb658c14677: Pull complete
+6a4699b1063e: Pull complete
+d23f6accef3d: Pull complete
+3814846efc9c: Pull complete
+e14c865e4394: Pull complete
+2133ee9f21fd: Pull complete
+c54f25ec0676: Pull complete
+b2f1c6cffd7b: Pull complete
+c26c7edcc26f: Pull complete
+119b6e1da171: Pull complete
+555b521641eb: Pull complete
+91886ae5d6b5: Pull complete
+b65156268961: Pull complete
+Digest: sha256:48826d11149ddfc5a949746a2acab459c75e30a849a38b2b3cc5f972f98afa6a
+Status: Downloaded newer image for wordpress:latest
+1bb94223a60bd1dfc22fe07c40ffd16e6f362dee21969577113bb39f3a0bafb6
+docker@ubuntu:~/test$ sudo docker run -dit --name docker-registry -p 5000:5000 registry
+[sudo] password for docker:
+Unable to find image 'registry:latest' locally
+latest: Pulling from library/registry
+c87736221ed0: Pull complete
+1cc8e0bb44df: Pull complete
+54d33bcb37f5: Pull complete
+e8afc091c171: Pull complete
+b4541f6d3db6: Pull complete
+Digest: sha256:8004747f1e8cd820a148fb7499d71a76d45ff66bac6a29129bfdbfdc0154d146
+Status: Downloaded newer image for registry:latest
+f411501643139711711ed22e52f8b5e095672309214af9e2639299b3adddc090
+docker@ubuntu:~/test$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS                    NAMES
+f41150164313        registry            "/entrypoint.sh /etc・"   17 seconds ago      Up 16 seconds                  0.0.0.0:5000->5000/tcp   docker-registry
+1bb94223a60b        wordpress:latest    "docker-entrypoint.s・"   20 minutes ago      Up 20 minutes                  0.0.0.0:80->80/tcp       wordpress
+ba3d20fd19c0        mysql:5.7           "docker-entrypoint.s・"   21 minutes ago      Up 21 minutes                  3306/tcp, 33060/tcp      mysql
+f24f6bc52fee        httpd               "httpd-foreground"       37 minutes ago      Exited (0) 26 minutes ago                               httpd2
+5706fefd2763        httpd               "httpd-foreground"       40 minutes ago      Exited (0) 38 minutes ago                               httpd
+270caabb4491        httpd               "httpd-foreground"       About an hour ago   Exited (137) 44 minutes ago                             beautiful_goldwasser
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"              About an hour ago   Exited (0) About an hour ago                            pedantic_easley
+docker@ubuntu:~/test$ sudo docker tag httpd localhost:5000/httpd
+docker@ubuntu:~/test$ sudo docker push localhost:5000/httpd
+The push refers to repository [localhost:5000/httpd]
+eb9b7fda09a9: Pushed
+34bee37d8bba: Pushed
+7051e05a2b9a: Pushed
+64c4da2050e7: Pushed
+2db44bce66cd: Pushed
+latest: digest: sha256:aba018c76d28b69b9c28aba2937bd7e0cdfe61f6219fad8cf4e2baf8941b43b5 size: 1367
+docker@ubuntu:~/test$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS                    NAMES
+f41150164313        registry            "/entrypoint.sh /etc・"   6 minutes ago       Up 6 minutes                   0.0.0.0:5000->5000/tcp   docker-registry
+1bb94223a60b        wordpress:latest    "docker-entrypoint.s・"   26 minutes ago      Up 26 minutes                  0.0.0.0:80->80/tcp       wordpress
+ba3d20fd19c0        mysql:5.7           "docker-entrypoint.s・"   27 minutes ago      Up 27 minutes                  3306/tcp, 33060/tcp      mysql
+f24f6bc52fee        httpd               "httpd-foreground"       43 minutes ago      Exited (0) 32 minutes ago                               httpd2
+5706fefd2763        httpd               "httpd-foreground"       46 minutes ago      Exited (0) 44 minutes ago                               httpd
+270caabb4491        httpd               "httpd-foreground"       About an hour ago   Exited (137) 50 minutes ago                             beautiful_goldwasser
+7d16b5109cd8        ubuntu:16.04        "/bin/bash"              About an hour ago   Exited (0) About an hour ago                            pedantic_easley
+docker@ubuntu:~/test$ sudo docker pull localhost:5000/httpd
+Using default tag: latest
+latest: Pulling from httpd
+Digest: sha256:aba018c76d28b69b9c28aba2937bd7e0cdfe61f6219fad8cf4e2baf8941b43b5
+Status: Image is up to date for localhost:5000/httpd:latest
+localhost:5000/httpd:latest
+docker@ubuntu:~/test$
